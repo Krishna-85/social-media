@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+     .card{
+        flex-direction: column;
+        display: flex;
+     }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-300 to-purple-300">
+        <div class="card bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+          <form action="/create-user" method="post" class="space-y-4">
+            <h1 class="text-2xl font-bold text-gray-800 text-center">Login Page</h1>
+            
+            <input 
+              type="text" 
+              name="username" 
+              placeholder="Enter Your Username"
+              class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+            
+            <input 
+              type="text" 
+              name="email" 
+              placeholder="user@gmail.com"
+              class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+            
+            <input 
+              type="text" 
+              name="profileImage" 
+              placeholder="Enter Your ImageUrl"
+              class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+            
+            <input 
+              type="text" 
+              name="bio" 
+              placeholder="bio"
+              class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+            
+            <input 
+              type="submit" 
+              class="w-full p-3 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition"
+            >
+          </form>
+        </div>
+      </div>
+      
+</body>
+</html>

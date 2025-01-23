@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+     .card{
+        flex-direction: column;
+        display: flex;
+     }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-300 to-purple-300">
+        <div class="card bg-white p-6 rounded-lg shadow-xl w-full max-w-sm">
+          <form action="/makehome" method="post" class="space-y-4">
+            <h1 class="text-2xl font-bold text-center text-purple-800">🌟 Create Post 🌟</h1>
+            
+            <input 
+              type="text" 
+              name="profileImage" 
+              placeholder="Enter Your ImageUrl"
+              class="w-full p-3 border-2 border-purple-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 placeholder:text-gray-400"
+            >
+            
+            <input 
+              type="text" 
+              name="caption" 
+              placeholder="Caption"
+              class="w-full p-3 border-2 border-purple-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 placeholder:text-gray-400"
+            >
+            
+            <input 
+              type="submit" 
+              class="w-full p-3 bg-purple-500 text-white font-bold rounded-lg hover:bg-purple-600 transition-transform transform hover:scale-105"
+            >
+          </form>
+        </div>
+      </div>
+      
+</body>
+</html>
