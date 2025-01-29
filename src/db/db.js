@@ -12,3 +12,8 @@ const connect = ()=>{
 }
 
 module.exports = connect;
+
+
+// o5EGoVngDiRfMwpG
+//mongodb+srv://vaibhav031:o5EGoVngDiRfMwpG@cluster1.lmuqe.mongodb.net/
+//Target to mongodb server, cluster is a server

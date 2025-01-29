@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- <style>
@@ -33,56 +33,75 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
     </style> -->
-</head>
-<body>
+  </head>
+  <body>
     <div class="flex items-center gap-2 justify-between p-6 text-white">
-        <div>
-           <h1 class="text-blue-600 text-3xl font-bold">Social Media</h1>
-        </div>
-        <div>
-
-            <a class="px-4 py-2 bg-blue-600 rounded-md font-semibold text-xs hover:bg-blue-700 transition" href="/">Home</a>
-            <a href="/makeform" class="px-4 py-2 bg-blue-600 rounded-md font-semibold text-xs hover:bg-blue-700 transition">
-                Create Post
-            </a>
-        </div>
-        
-
+      <div>
+        <h1 class="text-blue-600 text-3xl font-bold">Social Media</h1>
+      </div>
+      <div
+        class="flex flex-col sm:flex-row justify-center items-center gap-4 p-2"
+      >
+        <a
+          class="px-4 py-2 bg-blue-600 rounded-md font-semibold text-xs text-center text-white hover:bg-blue-700 transition"
+          href="/"
+        >
+          Log Out
+        </a>
+        <a
+          class="px-4 py-2 bg-blue-600 rounded-md font-semibold text-xs text-center text-white hover:bg-blue-700 transition"
+          href="/makeform"
+        >
+          Create Post
+        </a>
+      </div>
     </div>
     <% User.forEach((user)=>{ %>
-        <div class="flex justify-center items-center min-h-[75vh] bg-gray-100">
-            <div class="bg-white rounded-lg shadow-md max-w-md w-full">
-              <!-- Post Image -->
-              <div>
-                <img
-                  class="w-full h-[300px] object-cover"
-                  src="<%= user.profileImage  %>"
-                  alt="Post Image"
-                />
-              </div>
-          
-              <!-- Caption -->
-              <div class="p-4">
-                <p class="text-gray-700 text-sm">
-                  <%= user.caption  %>
-                </p>
-                <div class=" flex justify-between items-center  mt-3">
-                    
-                    <a  href="/like/<%= user._id  %>" class="flex flex-col items-cente text-blue-500 hover:text-blue-900 transition">
-                        <i class="ri-heart-line mr-1"></i> <span class="text-sm font-semibold text-zinc-600"><span class="text-2xl">❤️</span><%= user.likes  %> likes</span>
-                    </a>
-                    <a class=" bg-red-500 px-3 rounded-md text-white hover:text-blue-600 transition" href="/delete/<%= user._id  %>">Remove</a>
-              </div>
-                
-            </div>
+    <div class="flex justify-center items-center min-h-[75vh] bg-gray-100">
+      <div class="bg-white rounded-lg shadow-md max-w-md w-full">
+        <div>
+          <img
+            class="w-full h-[300px] object-cover"
+            src="<%= user.profileImage  %>"
+            alt="Post Image"
+          />
         </div>
+
+      
+        <div class="p-4">
+          <p class="text-gray-700 text-sm"><%= user.caption %></p>
+          <div class="flex justify-between items-center mt-3">
+            <a
+              href="/like/<%= user._id  %>"
+              class="flex flex-col items-cente text-blue-500 hover:text-blue-900 transition"
+            >
+              <i class="ri-heart-line mr-1"></i>
+              <span class="text-sm font-semibold text-zinc-600"
+                ><span class="text-2xl">❤️</span><%= user.likes %> likes</span
+              >
+            </a>
+            <a
+              class="bg-red-500 px-3 rounded-md text-white hover:text-blue-600 transition"
+              href="/delete/<%= user._id  %>"
+              >Remove</a>
+          </div>
+          <% const currentDate = new Date(); const createdDate = new
+          Date(user.created_at); const timeDifference = currentDate -
+          createdDate; const minutes = Math.floor(timeDifference / (1000 * 60));
+          const hours = Math.floor(timeDifference / (1000 * 60 * 60)); const
+          days = Math.floor(timeDifference / (1000 * 60 * 60 * 24)); let
+          timeAgo; if (minutes < 60) { timeAgo = `${minutes} minutes ago`; }
+          else if (hours < 24) { timeAgo = `${hours} hours ago`; } else {
+          timeAgo = `${days} days ago`; } %>
+
+          <p><%= timeAgo %></p>
+          <p>
+            <%= user.created_at.toString().split(" ").slice(0,3).join(" ") %>
+          </p>
+        </div>
+      </div>
     </div>
-          
-        <% })  %>
-  
-      
-           
-            
-      
-</body>
+
+    <% }) %>
+  </body>
 </html>

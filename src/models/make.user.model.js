@@ -10,7 +10,12 @@ const postSchema = new mongoose.Schema({
     likes:{
         type:Number,
         default:0
+    },
+    created_at:{
+        type:Date,
+        required:true
     }
+
 
 })
 const postModel = mongoose.model('makeUsers', postSchema)

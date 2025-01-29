@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const indexRouter = require('./routes/index.route')
+const indexRouter = require('./routes/index.routes')
 app.set('views', 'src/views')
 app.set('view engine', 'ejs')
 app.use(express.json())
